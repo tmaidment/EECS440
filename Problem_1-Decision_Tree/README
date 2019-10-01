@@ -1,0 +1,14 @@
+Problem 1 Decision Tree
+
+The decision tree is constructed and each internal node represents a selection attribute to split the data and each leaf node represents a class label.
+
+Algorithm steps:
+    1. First the original data set S as the root node.
+    2. For each iteration the algorithm iterates through every unused attribute A of data set S and calculates the information gain IG(A). 
+    3. Select the attribute with the largest information gain.
+    4. Split S by the selected attribute creating subsets.
+    5. recurse on each subset and only consider attributes that haven't been selected.
+    6. Stopping conditions.
+        a. every element belongs to the same class, make the node a leaf and labelled with that class.
+        b. no more attributes to be selected, make the node a leaf labelled with the majority case of the examples in the subset.
+        c. no more examples in the subset (ie no examples in parent match one of the selected attribute values).  create a leaf labelled with the most common class of the parent set.
